@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Principal</title>
+{% endblock %}
+
+{%block counter%}
+
+    <script type="text/javascript">
+        $(function(){
+            $('#counter').countdown({
+                image: '{{ STATIC_URL }}images/digits1.png',
+                startTime: "{{ hora }}",
+            });
+
+        });
+    </script>
+    <style type="text/css">
+        br { clear: both; }
+        .cntSeparator {
+            font-size: 54px;
+            margin: 10px 7px;
+            color: #fff;
+        }
+        .desc { margin: 7px 3px; }
+        .desc div {
+            float: left;
+            font-family: Arial;
+            width: 70px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
+
+{% endblock %}
+
+{% block contenido %}
+
+    <div id="countdown" >
+        <div id="counter">
+
+        </div><!--como hacer para que no inicie de nuevo cada vez que pulso F5?-->
+        <div class="desc">
+            <div style="margin-right: 65px;">Días</div>
+            <div style="margin-right: 65px;">Horas</div>
+            <div style="margin-right: 65px;">Minutos</div>
+            <div>Segundos</div>
+        </div>
+    </div>
+
+    <div id="slider">
+        <!-- Slideshow -->
+        <ul class="slideshow" width="550" height="350">
+
+            <!--<li><img src="{{ STATIC_URL }}images/2.png" width="550" height="350" /></li>--><!--no esta actuaizada la fechaz-->
+            <li><img src="{{ STATIC_URL }}images/swgj1.jpg" width="550" height="350" /></li>
+            <!--<li><img src="{{ STATIC_URL }}images/swgj4.jpg" width="550" height="350" /></li>-->
+            <li><img src="{{ STATIC_URL }}images/swgj5.jpg" width="550" height="350" /></li>
+            <li><img src="{{ STATIC_URL }}images/swgj3.png" width="550" height="350" /></li>
+        </ul>
+    </div>
+{% endblock %}

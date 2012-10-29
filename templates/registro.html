@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}
+    Registro
+{% endblock %}
+{% block contenido %}
+    <div style="position: relative;text-align: center; width:45%;margin:auto">
+        {% if errorRegistro %}
+            <div class="notice error">
+                <span class="icon medium" data-icon="X"></span>
+                El equipo ya existe o ya se ha registrado
+                <a href="#close" class="icon close" data-icon="x"></a></div>
+        {% endif %}
+    </div>
+
+    <div id="registro">
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="registro-titulo">Registro:</div>
+
+            <label>Nombre del Equipo:</label><input type="text" name="nombre" required/><br>
+            <label>Integrante 1:</label><input type="text" name="nombre1" required/><br>
+            <label>Integrante 2:</label><input type="text" name="nombre2" required/><br>
+
+            <div id="i3" style="display: none;">
+                <label>Integrante 3:</label><input type="text" name="nombre3"/>
+                <a href="#" class="x">x</a>
+                <br>
+            </div>
+            <div id="i4" style="display: none;">
+                <label>Integrante 4:</label><input type="text" name="nombre4"/>
+                <a href="#" class="x">x</a>
+                <br>
+            </div>
+            <div id="i5" style="display: none;">
+                <label>Integrante 5:</label><input type="text" name="nombre5"/>
+                <a href="#" class="x">x</a>
+                <br>
+            </div>
+
+            <label>Email:</label><input type="email" name="email" required/><br>
+            <!--<label>Avatar (52x52):</label><input name="avatar" type="file" id="file" size="15"><br>-->
+            <a style="margin-left: 10px;" href="#" id="agregar">Agregar Integrante</a><br>
+            <br>
+            <br>
+            <input class="submit" name="registro" type="submit" value="Registrarme">
+
+        </form>
+    </div>
+{% endblock %}

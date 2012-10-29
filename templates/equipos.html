@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}
+    Principal
+{% endblock %}
+{% block contenido %}
+
+    <div style="position: relative;text-align: center; width:65%;margin:auto">
+        {% if registrado %}
+            <div class="notice success">
+                <span class="icon medium" data-icon="C">
+                </span>
+                El registro fue satisfactorio.
+                <a href="#close" class="icon close" data-icon="x">
+                </a>
+            </div>
+        {% endif %}
+    </div>
+
+    <div>
+        <h4 style="color: white;text-align: center;">Equipos Registrados</h4></center>
+        <table id="tabla" class="sortable" cellpadding="0">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Integrante 1</th>
+                <th>Integrante 2</th>
+                <th>Integrante 3</th>
+                <th>Integrante 4</th>
+                <th>Integrante 5</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for p in equipos %}
+                <tr>
+                    <td>
+                        {{ p.Nombre }}
+                    </td>
+                    <td>{{ p.Integrante1 }}</td>
+                    <td>{{ p.Integrante2 }}</td>
+                    <td>{{ p.Integrante3 }}</td>
+                    <td>{{ p.Integrante4 }}</td>
+                    <td>{{ p.Integrante5 }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
